@@ -8,8 +8,6 @@
 #include<stdlib.h>
 
 
-
-
 int main()
 {
 
@@ -34,15 +32,13 @@ int main()
   bzero(&servaddr, sizeof(servaddr));
 
   servaddr.sin_family = AF_INET;
- // servaddr.sin_addr.s_addr = INADDR_ANY;
+  servaddr.sin_addr.s_addr = INADDR_ANY;
   servaddr.sin_port = htons(7802);
 
   if ( bind(sd, (struct sockaddr *)&servaddr, sizeof(servaddr)) != 0 )
     printf("Not binded\n");
   else
     printf("Binded\n");
-
-
 
   len=sizeof(cliaddr);
 
